@@ -2,10 +2,10 @@ addEventListener('fetch', event => {
   try {
     if (checkOrigins(event.request))
       event.respondWith(handleRequest(event.request))
-    else event.respondWith(new Response('🚫', { status: 403 }))
+    else event.respondWith(new Response(null, { status: 403 }))
   } catch (error) {
     console.error(error)
-    event.respondWith(new Response(error, { status: 500 }))
+    event.respondWith(new Response(null, { status: 500 }))
   }
 })
 
@@ -36,7 +36,7 @@ const handleRequest = async request => {
   const response = new Response(await results.text(), results)
   response.headers.set(
     'Access-Control-Allow-Origin',
-    request.headers.get('Origin') || '*',
+    request.headers.get('Origin') || '*'
   )
   response.headers.append('Vary', 'Origin')
 
