@@ -5,6 +5,8 @@
   "description": "A template for kick starting a Cloudflare Workers project",
   "main": "index.js",
   "scripts": {
+    "dev": "wrangler dev",
+    "publish": "wrangler publish",
     "format": "prettier --write '**/*.{js,css,json,md}'"
   }
 }

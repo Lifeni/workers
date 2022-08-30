@@ -1,8 +1,4 @@
 name = "proxy"
-type = "javascript"
-
-account_id = ""
+main = "./index.js"
 workers_dev = true
-route = ""
-zone_id = ""
 compatibility_date = "2022-02-22"
