@@ -1,0 +1,7 @@
+name = "redirect"
+main = "./index.mjs"
+workers_dev = true
+compatibility_date = "2022-08-29"
+kv_namespaces = [
+  { binding = "urls", id = "30ed2c5084cb4613a6aaed2e69bd943f", preview_id = "3ec087bcdfac4bcb806eabee47a58fef" },
+]

@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "redirect",
+  "version": "1.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project",
+  "main": "index.mjs",
+  "scripts": {
+    "dev": "wrangler dev",
+    "publish": "wrangler publish",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  }
+}

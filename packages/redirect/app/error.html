@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Redirect Error</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚠️</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --font-family: Inter, MiSans, 'HarmonyOS Sans SC', system-ui, sans-serif;
+        --primary: #0969da;
+        --primary-subtle: rgba(9, 105, 218, 0.75);
+        --border: solid 1px #d0d7de;
+        --background: #ffffff;
+        --background-subtle: #f6f8fa;
+        --color: #24292f;
+        --color-subtle: #6e7781;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --primary: #58a6ff;
+          --primary-subtle: rgba(88, 166, 255, 0.75);
+          --border: solid 1px #30363d;
+          --background: #0d1117;
+          --background-subtle: #161b22;
+          --color: #c9d1d9;
+          --color-subtle: #6e7681;
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 100vw;
+        min-height: 100vh;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-family);
+        color: var(--color);
+        background-color: var(--background);
+        overflow: hidden;
+        scroll-behavior: smooth;
+      }
+
+      main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      section.action-bar {
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      p {
+        font-size: 1.25rem;
+        white-space: nowrap;
+        color: var(--color-subtle);
+      }
+
+      a,
+      button {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: var(--border);
+        background-color: transparent;
+        font-family: var(--font-family);
+        cursor: pointer;
+        outline: solid 0.25rem transparent;
+        transition: all 0.2s;
+      }
+
+      a:hover,
+      button:hover,
+      a:active,
+      button:active {
+        background-color: var(--background-subtle);
+      }
+
+      a svg,
+      button svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        fill: var(--color);
+      }
+
+      a.primary,
+      button.primary {
+        background-color: var(--primary);
+      }
+
+      a.primary svg,
+      button.primary svg {
+        fill: #ffffff;
+      }
+
+      a:focus,
+      button:focus {
+        outline: solid 0.25rem var(--primary-subtle);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>⚠️ Error</h1>
+
+      <p>Could not create redirect, please try again</p>
+
+      <section class="action-bar">
+        <a class="primary" href="/" aria-label="Back" title="Back">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path
+              d="M19 21H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9a1 1 0 0 1-1 1zM6 19h12V9.157l-6-5.454-6 5.454V19z"
+            />
+          </svg>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
