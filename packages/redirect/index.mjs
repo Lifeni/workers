@@ -1,4 +1,3 @@
-import Index from './index.html'
 import Error from './app/error.html'
 import Ok from './app/ok.html'
 import Submit from './app/submit.html'
@@ -10,11 +9,6 @@ export default {
     const path = url.pathname.slice(1)
 
     if (!path) {
-      if (method !== 'GET') return new Response(null, { status: 405 })
-      return new Response(Index, {
-        headers: { 'Content-Type': 'text/html;charset=UTF-8' },
-      })
-    } else if (path === '+') {
       switch (method) {
         case 'GET': {
           return new Response(Submit, {
@@ -55,7 +49,7 @@ export default {
     } else {
       if (method !== 'GET') return new Response(null, { status: 405 })
       const target = await env.urls.get(path)
-      if (target) return Response.redirect(target, 301)
+      if (target) return Response.redirect(target, 302)
       return new Response(null, { status: 404 })
     }
   },

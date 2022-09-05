@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>Redirect OK</title>
+    <title>链接完成</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✅</text></svg>"
@@ -100,8 +100,8 @@
 
       <section class="action-bar">
         <button
-          aria-label="Copy"
-          title="Copy"
+          aria-label="复制链接地址"
+          title="复制链接地址"
           onclick="navigator.clipboard.writeText('{{ target }}')"
         >
           <svg
@@ -116,7 +116,7 @@
             />
           </svg>
         </button>
-        <a class="primary" href="/+" aria-label="Back" title="Back">
+        <a class="primary" href="/" aria-label="返回主页" title="返回主页">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -130,8 +130,8 @@
           </svg>
         </a>
         <a
-          aria-label="Open"
-          title="Open"
+          aria-label="打开链接"
+          title="打开链接"
           href="{{ target }}"
           target="_blank"
           rel="noopener noreferrer"

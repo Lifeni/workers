@@ -30,7 +30,7 @@ const checkOrigins = request => {
  */
 const handleRequest = async request => {
   const path = new URL(request.url).pathname
-  if (path === '/') return new Response('🚇')
+  if (path === '/') return new Response(null, { status: 404 })
 
   const results = await fetch(`https:/${path}`)
   const response = new Response(await results.text(), results)
