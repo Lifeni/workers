@@ -1,6 +1,8 @@
-import Error from './app/error.html'
-import Ok from './app/ok.html'
-import Submit from './app/submit.html'
+import Error from './response/error.html'
+import Ok from './response/ok.html'
+import Index from './index.html'
+
+const startTime = new Date('2022-09-01').getTime()
 
 export default {
   async fetch(request, env) {
@@ -11,30 +13,34 @@ export default {
     if (!path) {
       switch (method) {
         case 'GET': {
-          return new Response(Submit, {
+          return new Response(Index, {
             headers: { 'Content-Type': 'text/html;charset=UTF-8' },
           })
         }
         case 'POST': {
           try {
             const form = await request.formData()
-            const slug = form.get('slug')
+            const slug =
+              form.get('slug') ||
+              Math.abs(new Date().getTime() - startTime).toString(36)
             const encode = encodeURIComponent(slug)
             const link = form.get('link')
             await env.urls.put(encode, link)
+
+            const results = Ok.replaceAll('{{ slug }}', slug)
+              .replaceAll('{{ link }}', link)
+              .replaceAll('{{ target }}', `https://iokl.link/${slug}`)
+
             return new Response(
-              Ok.replaceAll('{{ slug }}', slug)
-                .replaceAll('{{ link }}', link)
-                .replaceAll('{{ target }}', `https://iokl.link/${slug}`),
-              {
-                headers: { 'Content-Type': 'text/html;charset=UTF-8' },
-              }
+              Index.replaceAll('<redirect-results />', results),
+              { headers: { 'Content-Type': 'text/html;charset=UTF-8' } }
             )
           } catch (error) {
             console.log(error)
-            return new Response(Error, {
-              headers: { 'Content-Type': 'text/html;charset=UTF-8' },
-            })
+            return new Response(
+              Index.replaceAll('<redirect-results />', Error),
+              { headers: { 'Content-Type': 'text/html;charset=UTF-8' } }
+            )
           }
         }
         default: {
