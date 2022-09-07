@@ -28,33 +28,41 @@
   >
     <form action="/" method="post">
       <main class="Box" style="width: 100%; max-width: 280px">
-        <div class="Box-header d-flex flex-items-center py-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 16 16"
-            width="16"
-            height="16"
-          >
-            <path
-              fill-rule="evenodd"
-              fill="currentColor"
-              d="M4.75 2.5a.25.25 0 00-.25.25v9.91l3.023-2.489a.75.75 0 01.954 0l3.023 2.49V2.75a.25.25 0 00-.25-.25h-6.5zM3 2.75C3 1.784 3.784 1 4.75 1h6.5c.966 0 1.75.784 1.75 1.75v11.5a.75.75 0 01-1.227.579L8 11.722l-3.773 3.107A.75.75 0 013 14.25V2.75z"
-            ></path>
-          </svg>
-          <h1 class="Box-title flex-auto pl-2" style="line-height: 2">
-            随意链接
-          </h1>
+        <div class="Box-header d-flex flex-items-start py-3">
+          <div class="d-flex flex-column flex-items-start flex-1">
+            <div class="d-flex flex-items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                width="16"
+                height="16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  fill="currentColor"
+                  d="M4.75 2.5a.25.25 0 00-.25.25v9.91l3.023-2.489a.75.75 0 01.954 0l3.023 2.49V2.75a.25.25 0 00-.25-.25h-6.5zM3 2.75C3 1.784 3.784 1 4.75 1h6.5c.966 0 1.75.784 1.75 1.75v11.5a.75.75 0 01-1.227.579L8 11.722l-3.773 3.107A.75.75 0 013 14.25V2.75z"
+                ></path>
+              </svg>
+              <h1 class="Box-title px-2">
+                <a href="/" class="color-fg-default">随意链接</a>
+              </h1>
+            </div>
+            <span class="text-small color-fg-subtle pt-1">
+              简单重定向指定链接
+            </span>
+          </div>
           <a
-            class="btn btn-sm my-1"
+            class="btn btn-sm"
             href="https://bitbucket.org/lifeni/workers/src/main/packages/redirect/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             代码
           </a>
         </div>
         <div class="Box-body">
           <input
-            class="form-control input-block mb-2"
+            class="form-control input-block input-lg mb-2 py-2"
             name="link"
             type="url"
             required
@@ -64,19 +72,42 @@
 
           <section class="pt-1 d-flex flex-items-center">
             <input
-              class="form-control input-block mr-2"
+              class="form-control input-block input-lg mr-2 py-2"
               name="slug"
               type="text"
               placeholder="自定义后缀"
             />
 
-            <button class="btn btn-primary btn-block ml-1" type="submit">
+            <button
+              class="btn btn-primary btn-block btn-lg ml-1 py-2"
+              type="submit"
+            >
               重定向
             </button>
           </section>
         </div>
         <redirect-results />
       </main>
+      <p class="w-full text-small text-center color-fg-subtle pt-2 mt-1">
+        Powered by
+        <a
+          href="https://developers.cloudflare.com/workers/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cloudflare Workers
+        </a>
+      </p>
     </form>
+    <div class="position-fixed bottom-0 right-0 p-5">
+      <a
+        class="color-fg-subtle text-small"
+        href="https://beian.miit.gov.cn/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        鲁ICP备19006085号
+      </a>
+    </div>
   </body>
 </html>
