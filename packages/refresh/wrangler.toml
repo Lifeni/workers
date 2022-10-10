@@ -1,4 +1,0 @@
-name = "refresh"
-main = "./index.js"
-workers_dev = true
-compatibility_date = "2022-09-05"
