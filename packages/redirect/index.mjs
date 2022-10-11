@@ -63,11 +63,11 @@ export default {
 
 const Favicon = `
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1024" height="1024" rx="512" fill="url(#paint0_linear_2195_2)"/>
+<rect width="1024" height="1024" rx="512" fill="url(#paint0_linear_1967_2)"/>
 <defs>
-<linearGradient id="paint0_linear_2195_2" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
-<stop stop-color="#CE9FFC"/>
-<stop offset="1" stop-color="#7367F0"/>
+<linearGradient id="paint0_linear_1967_2" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+<stop stop-color="#81FBB8"/>
+<stop offset="1" stop-color="#28C76F"/>
 </linearGradient>
 </defs>
 </svg>
